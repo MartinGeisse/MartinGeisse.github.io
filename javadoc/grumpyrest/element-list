@@ -1,0 +1,12 @@
+name.martingeisse.grumpyjson
+name.martingeisse.grumpyjson.builtin
+name.martingeisse.grumpyjson.builtin.helper_types
+name.martingeisse.grumpyjson.util
+name.martingeisse.grumpyrest
+name.martingeisse.grumpyrest.path
+name.martingeisse.grumpyrest.querystring
+name.martingeisse.grumpyrest.response
+name.martingeisse.grumpyrest.response.standard
+name.martingeisse.grumpyrest.servlet
+name.martingeisse.grumpyrest.stringparser
+name.martingeisse.grumpyrest.stringparser.standard
