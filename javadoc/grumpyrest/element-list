@@ -3,10 +3,11 @@ name.martingeisse.grumpyjson.builtin
 name.martingeisse.grumpyjson.builtin.helper_types
 name.martingeisse.grumpyjson.util
 name.martingeisse.grumpyrest
-name.martingeisse.grumpyrest.path
-name.martingeisse.grumpyrest.querystring
+name.martingeisse.grumpyrest.request
+name.martingeisse.grumpyrest.request.path
+name.martingeisse.grumpyrest.request.querystring
+name.martingeisse.grumpyrest.request.stringparser
+name.martingeisse.grumpyrest.request.stringparser.standard
 name.martingeisse.grumpyrest.response
 name.martingeisse.grumpyrest.response.standard
 name.martingeisse.grumpyrest.servlet
-name.martingeisse.grumpyrest.stringparser
-name.martingeisse.grumpyrest.stringparser.standard
