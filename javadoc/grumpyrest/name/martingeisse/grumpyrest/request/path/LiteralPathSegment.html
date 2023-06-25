@@ -93,6 +93,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">LiteralPathSegment</span>
 <span class="extends-implements">extends <a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></span></div>
+<div class="block">This segment only matches a request path segment with the exact same text.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,7 +106,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">LiteralPathSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -122,10 +125,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getText()" class="member-name-link">getText</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the segment text</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#matches(java.lang.String)" class="member-name-link">matches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segment)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether this segment matches a segment of a path from an incoming request.</div>
+</div>
 </div>
 </div>
 </div>
@@ -150,6 +157,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>LiteralPathSegment</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">LiteralPathSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text)</span></div>
+<div class="block">Constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - the expected text for the request path segment</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -164,15 +176,26 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getText()">
 <h3>getText</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getText</span>()</div>
+<div class="block">Getter method for the segment text</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the text</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="matches(java.lang.String)">
 <h3>matches</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">matches</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segment)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="PathSegment.html#matches(java.lang.String)">PathSegment</a></code></span></div>
+<div class="block">Checks whether this segment matches a segment of a path from an incoming request.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="PathSegment.html#matches(java.lang.String)">matches</a></code>&nbsp;in class&nbsp;<code><a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>segment</code> - the request path segment</dd>
+<dt>Returns:</dt>
+<dd>true if the segment matches, false if not</dd>
 </dl>
 </section>
 </li>

@@ -90,9 +90,18 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-segments">segments</span></code> - the segments of this path. These segments of the actual path from a request are lined up one-by-one
+                 with these segments and matched using <a href="PathSegment.html#matches(java.lang.String)"><code>PathSegment.matches(String)</code></a>.</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">Path</span>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a>&gt;&nbsp;segments)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">A path -- actually a path <i>pattern</i> -- that determines whether the actual path provided by a request matches
+ a route. An instance of this class may define path parameters using <a href="VariablePathSegment.html" title="class in name.martingeisse.grumpyrest.request.path"><code>VariablePathSegment</code></a>.
+
+ It is currently not possible to create an instance that allows an incoming request path to have extra segments.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -106,7 +115,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.List)" class="member-name-link">Path</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a>&gt;&nbsp;segments)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates an instance of a <code>Path</code> record class.</div>
+<div class="block">Compact constructor.</div>
 </div>
 </div>
 </section>
@@ -140,11 +149,13 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pathSpec)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates an instance from a string-based specification, using <code>:name</code> for path parameters.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#segments()" class="member-name-link">segments</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>segments</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-segments"><code>segments</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -172,10 +183,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.util.List)">
 <h3>Path</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Path</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a>&gt;&nbsp;segments)</span></div>
-<div class="block">Creates an instance of a <code>Path</code> record class.</div>
+<div class="block">Compact constructor.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>segments</code> - the value for the <code>segments</code> record component</dd>
+<dd><code>segments</code> - the segments of this path. These segments of the actual path from a request are lined up one-by-one
+                 with these segments and matched using <a href="PathSegment.html#matches(java.lang.String)"><code>PathSegment.matches(String)</code></a>.</dd>
 </dl>
 </section>
 </li>
@@ -191,6 +203,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="parse(java.lang.String)">
 <h3>parse</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;pathSpec)</span></div>
+<div class="block">Creates an instance from a string-based specification, using <code>:name</code> for path parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>pathSpec</code> - the path specification</dd>
+<dt>Returns:</dt>
+<dd>the instance</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -258,10 +277,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="segments()">
 <h3>segments</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a>&gt;</span>&nbsp;<span class="element-name">segments</span>()</div>
-<div class="block">Returns the value of the <code>segments</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-segments"><code>segments</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>segments</code> record component</dd>
+<dd>the value of the <a href="#param-segments"><code>segments</code></a> record component</dd>
 </dl>
 </section>
 </li>

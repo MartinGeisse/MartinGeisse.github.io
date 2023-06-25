@@ -95,15 +95,22 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="FinishRequestException.html" title="class in name.martingeisse.grumpyrest.response">FinishRequestException</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">&nbsp;</div>
+<div class="col-last even-row-color class-summary class-summary-tab5">
+<div class="block">This exception type can be thrown to immediately finish handling a request and respond with a specific response
+ value.</div>
+</div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="NoResponseFactoryException.html" title="class in name.martingeisse.grumpyrest.response">NoResponseFactoryException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">This exception type gets thrown if no response factory can be found for a specific response value.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">&nbsp;</div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">An object that knows how to express itself via HTTP to the client.</div>
+</div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">&nbsp;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">This factory knows how to turn specific kinds of response values into <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> objects.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ResponseFactoryRegistry.html" title="class in name.martingeisse.grumpyrest.response">ResponseFactoryRegistry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Allows to register <a href="ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseFactory</code></a>s that provide <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> implementations for other types

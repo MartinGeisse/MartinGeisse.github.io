@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">JsonRegistry</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">This registry keeps the <a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a>s used by a <a href="JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,7 +104,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">JsonRegistry</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor</div>
+</div>
 </div>
 </section>
 </li>
@@ -118,21 +121,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTypeAdapter(name.martingeisse.grumpyjson.JsonTypeAdapter)" class="member-name-link">addTypeAdapter</a><wbr>(<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;&nbsp;adapter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTypeAdapter(name.martingeisse.grumpyjson.JsonTypeAdapter)" class="member-name-link">addTypeAdapter</a><wbr>(<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;?&gt;&nbsp;adapter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a type adapter to this registry, to be used when parsing and generating JSON with the <a href="JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>
+ that uses this registry.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearTypeAdapters()" class="member-name-link">clearTypeAdapters</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes all type adapters from this registry.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTypeAdapter(com.google.gson.reflect.TypeToken)" class="member-name-link">getTypeAdapter</a><wbr>(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">This is a convenience wrapper for <a href="#getTypeAdapter(java.lang.reflect.Type)"><code>getTypeAdapter(Type)</code></a> in case the type is a not raw class object but
+ can be specified statically using a type token.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTypeAdapter(java.lang.Class)" class="member-name-link">getTypeAdapter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">This is a convenience wrapper for <a href="#getTypeAdapter(java.lang.reflect.Type)"><code>getTypeAdapter(Type)</code></a> in case the type is a raw class object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTypeAdapter(java.lang.reflect.Type)" class="member-name-link">getTypeAdapter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a type adapter for the specified type, auto-generating it if necessary and possible.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsAdapterAutoGeneration(java.lang.reflect.Type)" class="member-name-link">supportsAdapterAutoGeneration</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether a type is supported by this registry through auto-generation, that is, without ever registering
+ an explicit adapter for that type.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsType(java.lang.reflect.Type)" class="member-name-link">supportsType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether the specified type is supported by any adapter in this registry.</div>
+</div>
 </div>
 </div>
 </div>
@@ -154,6 +180,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>JsonRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JsonRegistry</span>()</div>
+<div class="block">Constructor</div>
 </section>
 </li>
 </ul>
@@ -168,30 +195,102 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="clearTypeAdapters()">
 <h3>clearTypeAdapters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearTypeAdapters</span>()</div>
+<div class="block">Removes all type adapters from this registry. This is useful because the registry that is used by a newly
+ created <a href="JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> contains default adapters, and the code using it might not want to use them.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="addTypeAdapter(name.martingeisse.grumpyjson.JsonTypeAdapter)">
 <h3>addTypeAdapter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTypeAdapter</span><wbr><span class="parameters">(<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;&nbsp;adapter)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTypeAdapter</span><wbr><span class="parameters">(<a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;?&gt;&nbsp;adapter)</span></div>
+<div class="block">Adds a type adapter to this registry, to be used when parsing and generating JSON with the <a href="JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>
+ that uses this registry.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>adapter</code> - the adapter to add</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsType(java.lang.reflect.Type)">
 <h3>supportsType</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Checks whether the specified type is supported by any adapter in this registry.
+ <p>
+ Note that there are some reasons why an adapter may claim to support a type, but fail at run-time when it
+ actually encounters that type. Such a type will still be "supported" by that adapter from the point-of-view of
+ the registry. Refer to the documentation of the individual type adapters for details.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsAdapterAutoGeneration(java.lang.reflect.Type)">
 <h3>supportsAdapterAutoGeneration</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsAdapterAutoGeneration</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Checks whether a type is supported by this registry through auto-generation, that is, without ever registering
+ an explicit adapter for that type. If this method returns <code>true</code> for a type, so does
+ <code>supportsType</code>. Note that this method even returns true for a type for which a type adapter could be
+ auto-generated but a type adapter has already been added manually, so the auto-generation never actually occurs.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported through auto-generation, false if not supported or only supported through an
+ explicitly added type adapter</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTypeAdapter(java.lang.Class)">
+<h3>getTypeAdapter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getTypeAdapter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span></div>
+<div class="block">This is a convenience wrapper for <a href="#getTypeAdapter(java.lang.reflect.Type)"><code>getTypeAdapter(Type)</code></a> in case the type is a raw class object. It
+ returns the adapter as a typed adapter.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the adapted type as a static type</dd>
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - the class to return an adapter for</dd>
+<dt>Returns:</dt>
+<dd>the type adapter</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTypeAdapter(com.google.gson.reflect.TypeToken)">
+<h3>getTypeAdapter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getTypeAdapter</span><wbr><span class="parameters">(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</span></div>
+<div class="block">This is a convenience wrapper for <a href="#getTypeAdapter(java.lang.reflect.Type)"><code>getTypeAdapter(Type)</code></a> in case the type is a not raw class object but
+ can be specified statically using a type token. It returns the adapter as a typed adapter.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the adapted type as a static type</dd>
+<dt>Parameters:</dt>
+<dd><code>typeToken</code> - a type token for the type to return an adapter for</dd>
+<dt>Returns:</dt>
+<dd>the type adapter</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getTypeAdapter(java.lang.reflect.Type)">
 <h3>getTypeAdapter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;T&gt;</span>&nbsp;<span class="element-name">getTypeAdapter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getTypeAdapter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Returns a type adapter for the specified type, auto-generating it if necessary and possible. This method will
+ throw an exception if no adapter for that type was registered and no adapter can be auto-generated. If multiple
+ type adapters have been registered that can handle the specified type, the one registered earlier will take
+ precedence.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to return an adapter for</dd>
+<dt>Returns:</dt>
+<dd>the type adapter</dd>
+</dl>
 </section>
 </li>
 </ul>

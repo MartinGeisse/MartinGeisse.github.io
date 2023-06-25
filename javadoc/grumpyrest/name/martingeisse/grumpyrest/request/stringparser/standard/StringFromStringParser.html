@@ -96,6 +96,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">StringFromStringParser</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></span></div>
+<div class="block">Returns the argument text as a <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> without any actual parsing.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +109,9 @@ implements <a href="../FromStringParser.html" title="interface in name.martingei
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">StringFromStringParser</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -127,7 +130,7 @@ implements <a href="../FromStringParser.html" title="interface in name.martingei
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseFromString(java.lang.String,java.lang.reflect.Type)" class="member-name-link">parseFromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a value from a string.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsType(java.lang.reflect.Type)" class="member-name-link">supportsType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
@@ -158,6 +161,7 @@ implements <a href="../FromStringParser.html" title="interface in name.martingei
 <section class="detail" id="&lt;init&gt;()">
 <h3>StringFromStringParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StringFromStringParser</span>()</div>
+<div class="block">Constructor.</div>
 </section>
 </li>
 </ul>
@@ -177,6 +181,10 @@ implements <a href="../FromStringParser.html" title="interface in name.martingei
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../FromStringParser.html#supportsType(java.lang.reflect.Type)">supportsType</a></code>&nbsp;in interface&nbsp;<code><a href="../FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
 </dl>
 </section>
 </li>
@@ -186,10 +194,15 @@ implements <a href="../FromStringParser.html" title="interface in name.martingei
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseFromString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../FromStringParser.html#parseFromString(java.lang.String,java.lang.reflect.Type)">FromStringParser</a></code></span></div>
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a value from a string.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../FromStringParser.html#parseFromString(java.lang.String,java.lang.reflect.Type)">parseFromString</a></code>&nbsp;in interface&nbsp;<code><a href="../FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>s</code> - the string to parse</dd>
+<dd><code>type</code> - the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed value</dd>
 </dl>
 </section>
 </li>

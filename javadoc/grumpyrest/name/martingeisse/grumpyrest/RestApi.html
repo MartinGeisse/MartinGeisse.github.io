@@ -91,6 +91,8 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">RestApi</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">This class is the main Entry point into grumpyrest. It is used by the application to define the REST API in terms
+ of endpoints and supported data types.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,7 +105,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">RestApi</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -122,46 +126,70 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addComplexRoute(name.martingeisse.grumpyrest.request.HttpMethod,java.lang.String,name.martingeisse.grumpyrest.ComplexHandler)" class="member-name-link">addComplexRoute</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a route to handle requests.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addComplexRoute(name.martingeisse.grumpyrest.request.HttpMethod,name.martingeisse.grumpyrest.request.path.Path,name.martingeisse.grumpyrest.ComplexHandler)" class="member-name-link">addComplexRoute</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a route to handle requests.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addFromStringParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)" class="member-name-link">addFromStringParser</a><wbr>(<a href="request/stringparser/FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a>&nbsp;parser)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a from-string parser to support new types of path parameters and querystring parameters.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addResponseFactory(name.martingeisse.grumpyrest.response.ResponseFactory)" class="member-name-link">addResponseFactory</a><wbr>(<a href="response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a>&nbsp;responseFactory)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a <a href="response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseFactory</code></a> to support new kinds of response values.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addRoute(name.martingeisse.grumpyrest.request.HttpMethod,java.lang.String,name.martingeisse.grumpyrest.SimpleHandler)" class="member-name-link">addRoute</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a route to handle requests.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addRoute(name.martingeisse.grumpyrest.request.HttpMethod,name.martingeisse.grumpyrest.request.path.Path,name.martingeisse.grumpyrest.SimpleHandler)" class="member-name-link">addRoute</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a route to handle requests.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addRoute(name.martingeisse.grumpyrest.Route)" class="member-name-link">addRoute</a><wbr>(<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&nbsp;route)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a route to handle requests.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="request/stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFromStringParserRegistry()" class="member-name-link">getFromStringParserRegistry</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the registry for from-string parsers.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson">JsonEngine</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJsonEngine()" class="member-name-link">getJsonEngine</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the <a href="../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="request/querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParserRegistry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQuerystringParserRegistry()" class="member-name-link">getQuerystringParserRegistry</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the registry for whole-querystring parsers.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="response/ResponseFactoryRegistry.html" title="class in name.martingeisse.grumpyrest.response">ResponseFactoryRegistry</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResponseFactoryRegistry()" class="member-name-link">getResponseFactoryRegistry</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the registry for custom response factories.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoutes()" class="member-name-link">getRoutes</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a snapshot of the currently present routes.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handle(name.martingeisse.grumpyrest.RequestCycle)" class="member-name-link">handle</a><wbr>(<a href="RequestCycle.html" title="class in name.martingeisse.grumpyrest">RequestCycle</a>&nbsp;requestCycle)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -193,6 +221,24 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>RestApi</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RestApi</span>()</div>
+<div class="block">Constructor.
+ <p>
+ No API routes will be registered by default, not even a route for the root path. You can add routes / handlers
+ after construction. You can also add a route that handles all unmatched requests, to implement a custom "not
+ found" response -- but make sure to add this route last, because it should match all requests, and then no
+ other route after than can be matched anymore.
+ <p>
+ Unmatched requests: By default, no fallback route for unmatched requests is present. Instead, the API handles
+ such requests internally by sending a standard 404 response that cannot be changed. This is just a formal
+ way to specify that a manually added catch-all route is the one and only way to implement custom "not found"
+ behavior.
+ <p>
+ From-string parsers, JSON Type adapters and response factories: After construction, this API object will have
+ default from-string parsers (for path / querystring parameters) and default response factories registered. It
+ will also use a newly created <a href="../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a> which has default type adapters registered. All of these
+ defaults can be removed to support special cases that, for example, use different rules / formats or require a
+ more lenient parser. In normal cases, the defaults support standard types out of the box and support for
+ application types can be added without removing any of the standard implementations.</div>
 </section>
 </li>
 </ul>
@@ -207,6 +253,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addRoute(name.martingeisse.grumpyrest.Route)">
 <h3>addRoute</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addRoute</span><wbr><span class="parameters">(<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&nbsp;route)</span></div>
+<div class="block">Adds a route to handle requests. This route can only be matched by requests that do not match any previously
+ added route, and takes precedence over any route added later.
+ <p>
+ The <a href="Route.html" title="class in name.martingeisse.grumpyrest"><code>Route</code></a> object defines both which requests it will match as well as the handler to invoke for such
+ requests.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>route</code> - the route to add</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -215,6 +270,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addComplexRoute</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</span></div>
+<div class="block">Adds a route to handle requests. This route can only be matched by requests that do not match any previously
+ added route, and takes precedence over any route added later.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path to match</dd>
+<dd><code>handler</code> - the handler to invoke</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -223,6 +286,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addComplexRoute</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</span></div>
+<div class="block">Adds a route to handle requests. This route can only be matched by requests that do not match any previously
+ added route, and takes precedence over any route added later.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path to match</dd>
+<dd><code>handler</code> - the handler to invoke</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -231,6 +302,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addRoute</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</span></div>
+<div class="block">Adds a route to handle requests. This route can only be matched by requests that do not match any previously
+ added route, and takes precedence over any route added later.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path to match</dd>
+<dd><code>handler</code> - the handler to invoke</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -239,48 +318,129 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addRoute</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</span></div>
+<div class="block">Adds a route to handle requests. This route can only be matched by requests that do not match any previously
+ added route, and takes precedence over any route added later.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path to match</dd>
+<dd><code>handler</code> - the handler to invoke</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getRoutes()">
 <h3>getRoutes</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&gt;</span>&nbsp;<span class="element-name">getRoutes</span>()</div>
+<div class="block">Returns a snapshot of the currently present routes.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the routes, as an immutable snapshot</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addResponseFactory(name.martingeisse.grumpyrest.response.ResponseFactory)">
 <h3>addResponseFactory</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addResponseFactory</span><wbr><span class="parameters">(<a href="response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a>&nbsp;responseFactory)</span></div>
+<div class="block">Adds a <a href="response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseFactory</code></a> to support new kinds of response values. This includes exception types for
+ which a specific response shall be generated (by default, exceptions just cause a standard 500 response).
+ <p>
+ Note that support for new JSON-able types should not be implemented as a response factory, but by
+ registering a <a href="../grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> with the <a href="../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a> returned by <a href="#getJsonEngine()"><code>getJsonEngine()</code></a> /
+ <a href="../grumpyjson/JsonEngine.html#getRegistry()"><code>JsonEngine.getRegistry()</code></a>. A custom response factory, OTOH, would be appropriate to send a JSON response
+ (using the <a href="../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> implicitly by calling one of the <a href="response/ResponseTransmitter.html#writeJson(java.lang.Object)"><code>ResponseTransmitter.writeJson(java.lang.Object)</code></a> methods)
+ together with a custom HTTP status code or custom HTTP headers.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>responseFactory</code> - the response factory to register</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getResponseFactoryRegistry()">
 <h3>getResponseFactoryRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="response/ResponseFactoryRegistry.html" title="class in name.martingeisse.grumpyrest.response">ResponseFactoryRegistry</a></span>&nbsp;<span class="element-name">getResponseFactoryRegistry</span>()</div>
+<div class="block">Getter method for the registry for custom response factories. See <a href="#addResponseFactory(name.martingeisse.grumpyrest.response.ResponseFactory)"><code>addResponseFactory(ResponseFactory)</code></a>
+ for some information on when such a factory helps. Getting the registry itself is necessary when you want to
+ remove the default response factories present after construction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the response factory registry</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addFromStringParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)">
 <h3>addFromStringParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addFromStringParser</span><wbr><span class="parameters">(<a href="request/stringparser/FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a>&nbsp;parser)</span></div>
+<div class="block">Adds a from-string parser to support new types of path parameters and querystring parameters. This is needed,
+ for example, to support a custom date format in the path or querystring. Note that you might need to call
+ <a href="#getFromStringParserRegistry()"><code>getFromStringParserRegistry()</code></a> to remove standard parsers if you want that custom format to be mapped
+ to one of the built-in types such as <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/time/LocalDate.html" title="class or interface in java.time" class="external-link"><code>LocalDate</code></a>.
+ <p>
+ Each from-string parser will only see a single path argument or a single querystring argument. If you have to
+ support whole-path logic, you will have to do so in the handler. If you have to support a whole-querystring
+ parser that uses a different format than key/value pairs separated by &amp; and = characters, see
+ <a href="#getQuerystringParserRegistry()"><code>getQuerystringParserRegistry()</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parser</code> - the parser to add</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getFromStringParserRegistry()">
 <h3>getFromStringParserRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="request/stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a></span>&nbsp;<span class="element-name">getFromStringParserRegistry</span>()</div>
+<div class="block">Getter method for the registry for from-string parsers. See <a href="#addFromStringParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)"><code>addFromStringParser(FromStringParser)</code></a> for
+ some information on when such a parser helps. Getting the registry itself is necessary when you want to
+ remove the default parsers after construction.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the from-string parser registry</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getQuerystringParserRegistry()">
 <h3>getQuerystringParserRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="request/querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParserRegistry</a></span>&nbsp;<span class="element-name">getQuerystringParserRegistry</span>()</div>
+<div class="block">Getter method for the registry for whole-querystring parsers. <b>Dealing with this registry is rarely needed
+ because it relates to how the whole querystring gets parsed, not how individual fields are parsed!</b> If you
+ want to support custom types for querystring parameters, see <a href="#addFromStringParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)"><code>addFromStringParser(FromStringParser)</code></a>
+ (and possibly <a href="#getFromStringParserRegistry()"><code>getFromStringParserRegistry()</code></a>) instead.
+ <p>
+ The registry returned here is relevant for redefining how the whole querystring is interpreted as individual
+ fields. You will have to deal with it in the following cases:
+ <ul>
+     <li>If the querystring uses a custom format instead of the standard key/value list using &amp; and
+       = characters (Note: I just realized this isn't possible right now because that format is imposed
+       by the servlet API. Fortunately, we don't need it yet. If we do, it's time to change the
+       <a href="request/querystring/QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParser</code></a> interface)</li>
+     <li>If the type to parse the whole querystring as cannot use an auto-generated record parser, for example
+       because it cannot be a Java record for some reason</li>
+ </ul>
+ There is no "addQuerystringParser()" method just so nobody is confused and thinks that you need to use it to
+ support custom field types.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the whole querystring parser registry</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getJsonEngine()">
 <h3>getJsonEngine</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson">JsonEngine</a></span>&nbsp;<span class="element-name">getJsonEngine</span>()</div>
+<div class="block">Getter method for the <a href="../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>. This method is needed to add custom types for request/response bodies
+ using custom <a href="../grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a>s.
+ <p>
+ (We might consider adding convenience methods to add type adapters here in RestApi)</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the JSON registries</dd>
+</dl>
 </section>
 </li>
 <li>

@@ -107,13 +107,23 @@ loadScripts(document, 'script');</script>
 <div class="block">The <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for <a href="name/martingeisse/grumpyjson/builtin/helper_types/FieldMustBeNull.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types"><code>FieldMustBeNull</code></a>.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="name/martingeisse/grumpyrest/response/FinishRequestException.html" title="class in name.martingeisse.grumpyrest.response">FinishRequestException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">This exception type can be thrown to immediately finish handling a request and respond with a specific response
+ value.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Implementations of this interface are used to parse a higher-level type from a string.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">This exception gets thrown by a <a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a> if the string to parse does not conform to the parser's
+ expectation.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This registry keeps <a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a>s used to parse path parameters and querystring parameters.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="name/martingeisse/grumpyrest/request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">HTTP methods as an enum.</div>
@@ -127,7 +137,9 @@ loadScripts(document, 'script');</script>
 <div class="block">A <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for the primitive type int and its boxed type, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link"><code>Integer</code></a>.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/stringparser/standard/IntegerFromStringParser.html" title="class in name.martingeisse.grumpyrest.request.stringparser.standard">IntegerFromStringParser</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Parses integers from their usual decimal text representation.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/JsonElementAdapter.html" title="class in name.martingeisse.grumpyjson.builtin">JsonElementAdapter</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for <code>JsonElement</code>.</div>
@@ -141,9 +153,14 @@ loadScripts(document, 'script');</script>
 <div class="block">This exception type gets thrown when the state of the objects being serialized is not possible to map to JSON.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson">JsonRegistry</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This registry keeps the <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a>s used by a <a href="name/martingeisse/grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/response/standard/JsonResponseFactory.html" title="class in name.martingeisse.grumpyrest.response.standard">JsonResponseFactory</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Converts any JSON-able value into a <a href="name/martingeisse/grumpyrest/response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> by invoking the <a href="name/martingeisse/grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>, then sending the result
+ with HTTP status code 200.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson">JsonTypeAdapter</a>&lt;<a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="type parameter in JsonTypeAdapter">T</a>&gt;</div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Defines the conversion from and to JSON for a single type.</div>
@@ -157,7 +174,9 @@ loadScripts(document, 'script');</script>
 <div class="block">This adapter handles type List&lt;...&gt;.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/LiteralPathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">LiteralPathSegment</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This segment only matches a request path segment with the exact same text.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/response/standard/NopResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">NopResponse</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Does not respond at all.</div>
@@ -186,36 +205,47 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for <a href="name/martingeisse/grumpyjson/builtin/helper_types/OptionalField.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types"><code>OptionalField</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/stringparser/ParseFromStringService.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">ParseFromStringService</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyjson/util/ParameterizedTypeImpl.html" title="class in name.martingeisse.grumpyjson.util">ParameterizedTypeImpl</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">NOT PUBLIC API</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/stringparser/ParseFromStringService.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">ParseFromStringService</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">This interface exposes only the <a href="name/martingeisse/grumpyrest/request/stringparser/FromStringParserRegistry.html#parseFromString(java.lang.String,java.lang.reflect.Type)"><code>FromStringParserRegistry.parseFromString(String, Type)</code></a> method.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">A path -- actually a path <i>pattern</i> -- that determines whether the actual path provided by a request matches
+ a route.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A concrete argument that was bound to a path parameter.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/PathUtil.html" title="class in name.martingeisse.grumpyrest.request.path">PathUtil</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A single segment from a <a href="name/martingeisse/grumpyrest/request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a>.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/PathUtil.html" title="class in name.martingeisse.grumpyrest.request.path">PathUtil</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">NOT PUBLIC API</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">A QuerystringParser turns a querystring into a Java Object, typically a record since parsers for them can be
  auto-generated.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParserProxy.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParserProxy</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParserRegistry</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A registry for <a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParser</code></a> objects.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab5">
 <div class="block">Represents one or more errors from parsing the querystring.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/querystring/QuerystringToRecordParser.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringToRecordParser</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Auto-generated record parsers.</div>
+<div class="block">This class implements an auto-generated record parser.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/RecordAdapter.html" title="class in name.martingeisse.grumpyjson">RecordAdapter</a>&lt;<a href="name/martingeisse/grumpyjson/RecordAdapter.html" title="type parameter in RecordAdapter">T</a>&gt;</div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
@@ -227,7 +257,9 @@ loadScripts(document, 'script');</script>
 <div class="block">NOT PUBLIC API</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/request/Request.html" title="interface in name.martingeisse.grumpyrest.request">Request</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">This interface provides access to all properties of an HTTP request that are relevant for the REST API.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/RequestCycle.html" title="class in name.martingeisse.grumpyrest">RequestCycle</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Hold the run-time state of processing a single request.</div>
@@ -237,9 +269,13 @@ loadScripts(document, 'script');</script>
 <div class="block">This object defines how to obtain the request path from the servlet request.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/response/Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">An object that knows how to express itself via HTTP to the client.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">This factory knows how to turn specific kinds of response values into <a href="name/martingeisse/grumpyrest/response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> objects.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/response/ResponseFactoryRegistry.html" title="class in name.martingeisse.grumpyrest.response">ResponseFactoryRegistry</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Allows to register <a href="name/martingeisse/grumpyrest/response/ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseFactory</code></a>s that provide <a href="name/martingeisse/grumpyrest/response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> implementations for other types
@@ -255,49 +291,64 @@ loadScripts(document, 'script');</script>
  the wrapped value implements this interface again) before an appropriate <a href="name/martingeisse/grumpyrest/response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> is created for it.</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/RestApi.html" title="class in name.martingeisse.grumpyrest">RestApi</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This class is the main Entry point into grumpyrest.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/servlet/RestServlet.html" title="class in name.martingeisse.grumpyrest.servlet">RestServlet</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Java servlet that serves a REST API defined by a <a href="name/martingeisse/grumpyrest/RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> object.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/Route.html" title="class in name.martingeisse.grumpyrest">Route</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">A route is, conceptually, a set of criteria that determine whether the route matches a specific requests, as well
+ as a handler that defines what to do for requests that match.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/RouteMatchResult.html" title="class in name.martingeisse.grumpyrest">RouteMatchResult</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">The result returned by <a href="name/martingeisse/grumpyrest/RestApi.html#match(name.martingeisse.grumpyrest.RequestCycle)"><code>RestApi.match(RequestCycle)</code></a> and <a href="name/martingeisse/grumpyrest/Route.html#match(name.martingeisse.grumpyrest.RequestCycle)"><code>Route.match(RequestCycle)</code></a>.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="name/martingeisse/grumpyrest/SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Implementing this handler interface should be preferred over <a href="name/martingeisse/grumpyrest/ComplexHandler.html" title="interface in name.martingeisse.grumpyrest"><code>ComplexHandler</code></a> whenever it is sufficient.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/response/standard/StandardErrorResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/response/standard/StandardErrorResponse.Body.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Body</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/response/standard/StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/response/standard/StatusOnlyResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StatusOnlyResponse</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Implements a standard JSON-based error response format, combined with a selectable HTTP status code.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="name/martingeisse/grumpyrest/response/standard/StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="block">Represents an error for a single field.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/response/standard/StatusOnlyResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StatusOnlyResponse</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Sends an empty response with a configurable HTTP status code.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/StringAdapter.html" title="class in name.martingeisse.grumpyjson.builtin">StringAdapter</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/StringAdapter.html" title="class in name.martingeisse.grumpyjson.builtin">StringAdapter</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for type <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/stringparser/standard/StringFromStringParser.html" title="class in name.martingeisse.grumpyrest.request.stringparser.standard">StringFromStringParser</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/util/StringUtil.html" title="class in name.martingeisse.grumpyjson.util">StringUtil</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/stringparser/standard/StringFromStringParser.html" title="class in name.martingeisse.grumpyrest.request.stringparser.standard">StringFromStringParser</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Returns the argument text as a <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a> without any actual parsing.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/util/StringUtil.html" title="class in name.martingeisse.grumpyjson.util">StringUtil</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">NOT PUBLIC API</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/util/TypeUtil.html" title="class in name.martingeisse.grumpyjson.util">TypeUtil</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">NOT PUBLIC API</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/TypeUtil.html" title="class in name.martingeisse.grumpyjson">TypeUtil</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">NOT PUBLIC API</div>
-</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapper.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types">TypeWrapper</a>&lt;<a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapper.html" title="type parameter in TypeWrapper">T</a>&gt;</div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapperAdapter.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types">TypeWrapperAdapter</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapper.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types">TypeWrapper</a>&lt;<a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapper.html" title="type parameter in TypeWrapper">T</a>&gt;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapperAdapter.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types">TypeWrapperAdapter</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The <a href="name/martingeisse/grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> for <a href="name/martingeisse/grumpyjson/builtin/helper_types/TypeWrapper.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types"><code>TypeWrapper</code></a>.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/VariablePathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">VariablePathSegment</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="name/martingeisse/grumpyrest/request/path/VariablePathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">VariablePathSegment</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">This segment matches any request path segment.</div>
+</div>
 </div>
 </div>
 </div>

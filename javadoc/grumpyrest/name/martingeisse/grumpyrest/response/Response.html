@@ -91,6 +91,21 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Response</span></div>
+<div class="block">An object that knows how to express itself via HTTP to the client. In other words, this interface is implemented
+ by objects that can transmit themselves to the client using a <a href="ResponseTransmitter.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseTransmitter</code></a>.
+ <p>
+ Most application-level objects do not implement this interface because they are defined on a higher level than
+ HTTP. These objects do not even know how to express themselves as JSON, but they <i>do</i> have a
+ <a href="../../grumpyjson/JsonTypeAdapter.html" title="interface in name.martingeisse.grumpyjson"><code>JsonTypeAdapter</code></a> registered in the <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>, so at least that can be used to generate JSON.
+ However, this is not by itself sufficient to express via HTTP.
+ <p>
+ Instead, on a lower level, a <a href="ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response"><code>ResponseFactory</code></a> is selected that further converts the JSON to a
+ <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a>. Likewise, other values such as uncaught exceptions are also converted to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a>,
+ either by an appropriate factory or by the framework itself. The result is that no matter what happens, in the
+ end an instance of this interface is the result, and that instance is asked to transmit itself to the client.
+ <p>
+ The response transmitter used here is simply an abstraction of the <code>HttpServletResponse</code> that we use to
+ decouple our code from unnecessary parts of the servlet spec.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -136,8 +151,10 @@ loadScripts(document, 'script');</script>
  passed to the implementation by another mechanism. This interface tries to keep the dependency between the two
  minimal.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>responseTransmitter</code> - the response transmitter that is used to actually send data to the client</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>

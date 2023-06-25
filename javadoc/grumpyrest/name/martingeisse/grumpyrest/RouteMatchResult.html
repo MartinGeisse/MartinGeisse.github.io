@@ -90,9 +90,15 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-route">route</span></code> - the route that was matched</dd>
+<dd><code><span id="param-pathArguments">pathArguments</span></code> - arguments that were bound to path parameters</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">RouteMatchResult</span>(<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&nbsp;route, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;&nbsp;pathArguments)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">The result returned by <a href="RestApi.html#match(name.martingeisse.grumpyrest.RequestCycle)"><code>RestApi.match(RequestCycle)</code></a> and <a href="Route.html#match(name.martingeisse.grumpyrest.RequestCycle)"><code>Route.match(RequestCycle)</code></a>.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +113,7 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.Route,java.util.List)" class="member-name-link">RouteMatchResult</a><wbr>(<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&nbsp;route,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;&nbsp;pathArguments)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates an instance of a <code>RouteMatchResult</code> record class.</div>
+<div class="block">Compact constructor.</div>
 </div>
 </div>
 </section>
@@ -136,12 +142,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pathArguments()" class="member-name-link">pathArguments</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>pathArguments</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-pathArguments"><code>pathArguments</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#route()" class="member-name-link">route</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>route</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-route"><code>route</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -170,11 +176,11 @@ loadScripts(document, 'script');</script>
 <h3>RouteMatchResult</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RouteMatchResult</span><wbr><span class="parameters">(<a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a>&nbsp;route,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;&nbsp;pathArguments)</span></div>
-<div class="block">Creates an instance of a <code>RouteMatchResult</code> record class.</div>
+<div class="block">Compact constructor.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>route</code> - the value for the <code>route</code> record component</dd>
-<dd><code>pathArguments</code> - the value for the <code>pathArguments</code> record component</dd>
+<dd><code>route</code> - the route that was matched</dd>
+<dd><code>pathArguments</code> - arguments that were bound to path parameters</dd>
 </dl>
 </section>
 </li>
@@ -231,10 +237,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="route()">
 <h3>route</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a></span>&nbsp;<span class="element-name">route</span>()</div>
-<div class="block">Returns the value of the <code>route</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-route"><code>route</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>route</code> record component</dd>
+<dd>the value of the <a href="#param-route"><code>route</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -242,10 +248,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="pathArguments()">
 <h3>pathArguments</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</span>&nbsp;<span class="element-name">pathArguments</span>()</div>
-<div class="block">Returns the value of the <code>pathArguments</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-pathArguments"><code>pathArguments</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>pathArguments</code> record component</dd>
+<dd>the value of the <a href="#param-pathArguments"><code>pathArguments</code></a> record component</dd>
 </dl>
 </section>
 </li>

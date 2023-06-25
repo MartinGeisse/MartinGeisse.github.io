@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ResponseFactory</span></div>
+<div class="block">This factory knows how to turn specific kinds of response values into <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> objects.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -131,6 +132,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></span>&nbsp;<span class="element-name">createResponse</span><wbr><span class="parameters">(<a href="../RequestCycle.html" title="class in name.martingeisse.grumpyrest">RequestCycle</a>&nbsp;requestCycle,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</span></div>
 <div class="block">Returns null on failure, causing the next factory to be tried.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>requestCycle</code> - the request cycle to create a response for. This is passed in case the response factory
+                     wants to do special stuff like look into request properties.</dd>
+<dd><code>value</code> - the response value to convert to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a></dd>
+<dt>Returns:</dt>
+<dd>the response</dd>
+</dl>
 </section>
 </li>
 </ul>

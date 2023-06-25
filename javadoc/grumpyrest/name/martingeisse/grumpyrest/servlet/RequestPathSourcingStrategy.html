@@ -123,11 +123,17 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Enum Constant</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="#PATH_INFO_ONLY" class="member-name-link">PATH_INFO_ONLY</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">The request path only consists of the path info.</div>
+</div>
 <div class="col-first odd-row-color"><code><a href="#STARTING_WITH_CONTEXT_PATH" class="member-name-link">STARTING_WITH_CONTEXT_PATH</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">The request path is built by concatenating the context path, servlet path and path info.</div>
+</div>
 <div class="col-first even-row-color"><code><a href="#STARTING_WITH_SERVLET_PATH" class="member-name-link">STARTING_WITH_SERVLET_PATH</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">The request path is built by concatenating the servlet path and path info.</div>
+</div>
 </div>
 </section>
 </li>
@@ -144,7 +150,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPath(jakarta.servlet.http.HttpServletRequest)" class="member-name-link">getPath</a><wbr>(jakarta.servlet.http.HttpServletRequest&nbsp;request)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Determines the request path from a servlet request object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#valueOf(java.lang.String)" class="member-name-link">valueOf</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -180,18 +188,21 @@ the order they are declared.</div>
 <section class="detail" id="STARTING_WITH_CONTEXT_PATH">
 <h3>STARTING_WITH_CONTEXT_PATH</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a></span>&nbsp;<span class="element-name">STARTING_WITH_CONTEXT_PATH</span></div>
+<div class="block">The request path is built by concatenating the context path, servlet path and path info.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="STARTING_WITH_SERVLET_PATH">
 <h3>STARTING_WITH_SERVLET_PATH</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a></span>&nbsp;<span class="element-name">STARTING_WITH_SERVLET_PATH</span></div>
+<div class="block">The request path is built by concatenating the servlet path and path info.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="PATH_INFO_ONLY">
 <h3>PATH_INFO_ONLY</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a></span>&nbsp;<span class="element-name">PATH_INFO_ONLY</span></div>
+<div class="block">The request path only consists of the path info.</div>
 </section>
 </li>
 </ul>
@@ -237,6 +248,13 @@ not permitted.)</div>
 <section class="detail" id="getPath(jakarta.servlet.http.HttpServletRequest)">
 <h3>getPath</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getPath</span><wbr><span class="parameters">(jakarta.servlet.http.HttpServletRequest&nbsp;request)</span></div>
+<div class="block">Determines the request path from a servlet request object.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>request</code> - the servlet request object</dd>
+<dt>Returns:</dt>
+<dd>the path</dd>
+</dl>
 </section>
 </li>
 </ul>

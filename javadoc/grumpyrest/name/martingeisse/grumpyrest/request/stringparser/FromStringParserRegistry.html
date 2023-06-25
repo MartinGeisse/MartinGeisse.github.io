@@ -96,6 +96,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FromStringParserRegistry</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="ParseFromStringService.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">ParseFromStringService</a></span></div>
+<div class="block">This registry keeps <a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a>s used to parse path parameters and querystring parameters.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +109,9 @@ implements <a href="ParseFromStringService.html" title="interface in name.martin
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">FromStringParserRegistry</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -125,22 +128,31 @@ implements <a href="ParseFromStringService.html" title="interface in name.martin
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)" class="member-name-link">addParser</a><wbr>(<a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a>&nbsp;parser)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a parser to this registry, to be used when parsing path arguments and querystring arguments from requests
+ to a <a href="../../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> that uses this registry.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearParsers()" class="member-name-link">clearParsers</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes all parsers from this registry.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParser(java.lang.reflect.Type)" class="member-name-link">getParser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a parser for the specified type.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseFromString(java.lang.String,java.lang.reflect.Type)" class="member-name-link">parseFromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a string to obtain a value of the specified type.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsType(java.lang.reflect.Type)" class="member-name-link">supportsType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether the specified type is supported by any parser in this registry.</div>
+</div>
 </div>
 </div>
 </div>
@@ -162,6 +174,8 @@ implements <a href="ParseFromStringService.html" title="interface in name.martin
 <section class="detail" id="&lt;init&gt;()">
 <h3>FromStringParserRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FromStringParserRegistry</span>()</div>
+<div class="block">Constructor. This constructor does not add any standard parsers, but the <a href="../../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> calling this
+ constructor does.</div>
 </section>
 </li>
 </ul>
@@ -176,24 +190,52 @@ implements <a href="ParseFromStringService.html" title="interface in name.martin
 <section class="detail" id="clearParsers()">
 <h3>clearParsers</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearParsers</span>()</div>
+<div class="block">Removes all parsers from this registry. This is useful because the registry that is used by a newly
+ created <a href="../../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> contains default parsers, and the code using it might not want to use them.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="addParser(name.martingeisse.grumpyrest.request.stringparser.FromStringParser)">
 <h3>addParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addParser</span><wbr><span class="parameters">(<a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a>&nbsp;parser)</span></div>
+<div class="block">Adds a parser to this registry, to be used when parsing path arguments and querystring arguments from requests
+ to a <a href="../../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> that uses this registry.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parser</code> - the parser to add</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsType(java.lang.reflect.Type)">
 <h3>supportsType</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Checks whether the specified type is supported by any parser in this registry.
+ <p>
+ Unlike other registries such as the <a href="../../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>, no auto-generation is supported for from-string
+ parsers (there is no default format they could use), so this will simply check if any of the manually added
+ parsers supports the specified type.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getParser(java.lang.reflect.Type)">
 <h3>getParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></span>&nbsp;<span class="element-name">getParser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Returns a parser for the specified type. This method will throw an exception if no parser for that type was
+ registered. If multiple parsers have been registered that can handle the specified type, the one registered
+ earlier will take precedence.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to return an adapter for</dd>
+<dt>Returns:</dt>
+<dd>the type adapter</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -203,12 +245,18 @@ implements <a href="ParseFromStringService.html" title="interface in name.martin
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
                        throws <span class="exceptions"><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ParseFromStringService.html#parseFromString(java.lang.String,java.lang.reflect.Type)">ParseFromStringService</a></code></span></div>
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a string to obtain a value of the specified type.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="ParseFromStringService.html#parseFromString(java.lang.String,java.lang.reflect.Type)">parseFromString</a></code>&nbsp;in interface&nbsp;<code><a href="ParseFromStringService.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">ParseFromStringService</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>text</code> - the text to parse</dd>
+<dd><code>type</code> - the type to convert to</dd>
+<dt>Returns:</dt>
+<dd>the converted value</dd>
 <dt>Throws:</dt>
-<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code></dd>
+<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code> - if conversion fails because the text does not conform to the expected
+ format according to the type to convert to</dd>
 </dl>
 </section>
 </li>

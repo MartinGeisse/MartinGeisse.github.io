@@ -109,7 +109,9 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">IdentityResponseFactory</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -151,6 +153,7 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <section class="detail" id="&lt;init&gt;()">
 <h3>IdentityResponseFactory</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">IdentityResponseFactory</span>()</div>
+<div class="block">Constructor.</div>
 </section>
 </li>
 </ul>
@@ -171,6 +174,12 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../ResponseFactory.html#createResponse(name.martingeisse.grumpyrest.RequestCycle,java.lang.Object)">createResponse</a></code>&nbsp;in interface&nbsp;<code><a href="../ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>requestCycle</code> - the request cycle to create a response for. This is passed in case the response factory
+                     wants to do special stuff like look into request properties.</dd>
+<dd><code>value</code> - the response value to convert to a <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a></dd>
+<dt>Returns:</dt>
+<dd>the response</dd>
 </dl>
 </section>
 </li>

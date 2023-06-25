@@ -110,7 +110,9 @@ loadScripts(document, 'script');</script>
  jakarta.servlet.http.HttpServletRequest&nbsp;servletRequest,
  jakarta.servlet.http.HttpServletResponse&nbsp;servletResponse,
  <a href="servlet/RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a>&nbsp;requestPathSourcingStrategy)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">NOT PUBLIC API</div>
+</div>
 </div>
 </section>
 </li>
@@ -127,43 +129,39 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="RestApi.html" title="class in name.martingeisse.grumpyrest">RestApi</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getApi()" class="member-name-link">getApi</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the <a href="RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> that handles the request</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="request/Request.html" title="interface in name.martingeisse.grumpyrest.request">Request</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHighlevelRequest()" class="member-name-link">getHighlevelRequest</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The high-level <a href="request/Request.html" title="interface in name.martingeisse.grumpyrest.request"><code>Request</code></a> object that makes all relevant properties of the HTTP request available.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMatchedRoute()" class="member-name-link">getMatchedRoute</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the route that matched this request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPathArguments()" class="member-name-link">getPathArguments</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the path arguments that are bound to variables in the path of the matched route.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPathSegments()" class="member-name-link">getPathSegments</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the requested path, split into segments at slashes</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="response/ResponseTransmitter.html" title="interface in name.martingeisse.grumpyrest.response">ResponseTransmitter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResponseTransmitter()" class="member-name-link">getResponseTransmitter</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns an object that is used by <a href="response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> implementations to transmit the response to the client.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>jakarta.servlet.http.HttpServletRequest</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getServletRequest()" class="member-name-link">getServletRequest</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseBody(com.google.gson.reflect.TypeToken)" class="member-name-link">parseBody</a><wbr>(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseBody(java.lang.Class)" class="member-name-link">parseBody</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseBody(java.lang.reflect.Type)" class="member-name-link">parseBody</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseQuerystring(com.google.gson.reflect.TypeToken)" class="member-name-link">parseQuerystring</a><wbr>(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseQuerystring(java.lang.Class)" class="member-name-link">parseQuerystring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parseQuerystring(java.lang.reflect.Type)" class="member-name-link">parseQuerystring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter method for the underlying servlet request</div>
+</div>
 </div>
 </div>
 </div>
@@ -188,6 +186,14 @@ loadScripts(document, 'script');</script>
  jakarta.servlet.http.HttpServletRequest&nbsp;servletRequest,
  jakarta.servlet.http.HttpServletResponse&nbsp;servletResponse,
  <a href="servlet/RequestPathSourcingStrategy.html" title="enum class in name.martingeisse.grumpyrest.servlet">RequestPathSourcingStrategy</a>&nbsp;requestPathSourcingStrategy)</span></div>
+<div class="block">NOT PUBLIC API</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>api</code> - ...</dd>
+<dd><code>servletRequest</code> - ...</dd>
+<dd><code>servletResponse</code> - ...</dd>
+<dd><code>requestPathSourcingStrategy</code> - ...</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -202,92 +208,87 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getApi()">
 <h3>getApi</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="RestApi.html" title="class in name.martingeisse.grumpyrest">RestApi</a></span>&nbsp;<span class="element-name">getApi</span>()</div>
+<div class="block">Getter method for the <a href="RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> that handles the request</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the REST API implementation</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getServletRequest()">
 <h3>getServletRequest</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">jakarta.servlet.http.HttpServletRequest</span>&nbsp;<span class="element-name">getServletRequest</span>()</div>
+<div class="block">Getter method for the underlying servlet request</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the servlet request</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getPathSegments()">
 <h3>getPathSegments</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getPathSegments</span>()</div>
+<div class="block">Getter method for the requested path, split into segments at slashes</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the path segments</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getMatchedRoute()">
 <h3>getMatchedRoute</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Route.html" title="class in name.martingeisse.grumpyrest">Route</a></span>&nbsp;<span class="element-name">getMatchedRoute</span>()</div>
+<div class="block">Getter method for the route that matched this request. This method must not be called before route matching
+ is completed, otherwise it throws an exception.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the route</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getPathArguments()">
 <h3>getPathArguments</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="request/PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</span>&nbsp;<span class="element-name">getPathArguments</span>()</div>
+<div class="block">Getter method for the path arguments that are bound to variables in the path of the matched route.
+ This method must not be called before route matching is completed, otherwise it throws an exception.
+ <p>
+ The returned list contains elements only for variables in the route's path, not for fixed path segments.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the path arguments</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getHighlevelRequest()">
 <h3>getHighlevelRequest</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="request/Request.html" title="interface in name.martingeisse.grumpyrest.request">Request</a></span>&nbsp;<span class="element-name">getHighlevelRequest</span>()</div>
+<div class="block">The high-level <a href="request/Request.html" title="interface in name.martingeisse.grumpyrest.request"><code>Request</code></a> object that makes all relevant properties of the HTTP request available. This is
+ the object that gets passed to a <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> as the only parameter.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the request</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getResponseTransmitter()">
 <h3>getResponseTransmitter</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="response/ResponseTransmitter.html" title="interface in name.martingeisse.grumpyrest.response">ResponseTransmitter</a></span>&nbsp;<span class="element-name">getResponseTransmitter</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseBody(java.lang.Class)">
-<h3>parseBody</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseBody(com.google.gson.reflect.TypeToken)">
-<h3>parseBody</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseBody(java.lang.reflect.Type)">
-<h3>parseBody</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="parseQuerystring(java.lang.Class)">
-<h3>parseQuerystring</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span>
-                       throws <span class="exceptions"><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
+<div class="block">Returns an object that is used by <a href="response/Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> implementations to transmit the response to the client. It is
+ an abstraction of the <code>HttpServletResponse</code> and contains methods to send headers as well as the response
+ body.
+ <p>
+ The returned object is called a response <i>transmitter</i>, even though it abstracts the servlet
+ <i>response</i>, because the latter suffers from bad naming: That object isn't really the response itself as
+ much as a mechanism to send a response to the client.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="parseQuerystring(com.google.gson.reflect.TypeToken)">
-<h3>parseQuerystring</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</span>
-                       throws <span class="exceptions"><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="parseQuerystring(java.lang.reflect.Type)">
-<h3>parseQuerystring</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
-                        throws <span class="exceptions"><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="request/querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
+<dt>Returns:</dt>
+<dd>the response transmitter</dd>
 </dl>
 </section>
 </li>

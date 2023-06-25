@@ -91,6 +91,12 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-status">status</span></code> - the HTTP status</dd>
+<dd><code><span id="param-message">message</span></code> - the error message</dd>
+<dd><code><span id="param-fields">fields</span></code> - the field errors</dd>
+</dl>
+<dl class="notes">
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></code></dd>
 </dl>
@@ -98,6 +104,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">StandardErrorResponse</span>(int&nbsp;status, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message, <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&gt;&nbsp;fields)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a>
 implements <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></span></div>
+<div class="block">Implements a standard JSON-based error response format, combined with a selectable HTTP status code.
+ <p>
+ The "message" field contains a string message, and the "fields" contains a list of field errors, each with a
+ field path and message. This allows to send a response that mentions errors in multiple fields at the same time.
+ If, for example, JSON validation fails for the request body, then the individual field errors can be mentioned
+ to the client all at once.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -111,11 +123,10 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final record&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StandardErrorResponse.Body.html" class="type-name-link" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Body</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>static final record&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="StandardErrorResponse.Field.html" class="type-name-link" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-second even-row-color"><code><a href="StandardErrorResponse.Field.html" class="type-name-link" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Represents an error for a single field.</div>
+</div>
 </div>
 </section>
 </li>
@@ -167,17 +178,21 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String)" class="member-name-link">StandardErrorResponse</a><wbr>(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor without field errors.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,java.util.List)" class="member-name-link">StandardErrorResponse</a><wbr>(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&gt;&nbsp;fields)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates an instance of a <code>StandardErrorResponse</code> record class.</div>
+<div class="block">Compact constructor.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,name.martingeisse.grumpyrest.response.standard.StandardErrorResponse.Field)" class="member-name-link">StandardErrorResponse</a><wbr>(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&nbsp;field)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor with a single field error.</div>
+</div>
 </div>
 </section>
 </li>
@@ -200,7 +215,7 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fields()" class="member-name-link">fields</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>fields</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-fields"><code>fields</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -210,7 +225,7 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#message()" class="member-name-link">message</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>message</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-message"><code>message</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="StandardErrorResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#requestBodyValidationFailed(name.martingeisse.grumpyjson.JsonValidationException)" class="member-name-link">requestBodyValidationFailed</a><wbr>(<a href="../../../grumpyjson/JsonValidationException.html" title="class in name.martingeisse.grumpyjson">JsonValidationException</a>&nbsp;e)</code></div>
@@ -220,7 +235,7 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#status()" class="member-name-link">status</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>status</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-status"><code>status</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -301,12 +316,12 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StandardErrorResponse</span><wbr><span class="parameters">(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&gt;&nbsp;fields)</span></div>
-<div class="block">Creates an instance of a <code>StandardErrorResponse</code> record class.</div>
+<div class="block">Compact constructor.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>status</code> - the value for the <code>status</code> record component</dd>
-<dd><code>message</code> - the value for the <code>message</code> record component</dd>
-<dd><code>fields</code> - the value for the <code>fields</code> record component</dd>
+<dd><code>status</code> - the HTTP status</dd>
+<dd><code>message</code> - the error message</dd>
+<dd><code>fields</code> - the field errors</dd>
 </dl>
 </section>
 </li>
@@ -315,6 +330,12 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <h3>StandardErrorResponse</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StandardErrorResponse</span><wbr><span class="parameters">(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message)</span></div>
+<div class="block">Constructor without field errors.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>status</code> - the HTTP status code</dd>
+<dd><code>message</code> - the error message</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -323,6 +344,13 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StandardErrorResponse</span><wbr><span class="parameters">(int&nbsp;status,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;message,
  <a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&nbsp;field)</span></div>
+<div class="block">Constructor with a single field error.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>status</code> - the HTTP status code</dd>
+<dd><code>message</code> - the error message</dd>
+<dd><code>field</code> - the field error</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -339,6 +367,12 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="StandardErrorResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse</a></span>&nbsp;<span class="element-name">requestBodyValidationFailed</span><wbr><span class="parameters">(<a href="../../../grumpyjson/JsonValidationException.html" title="class in name.martingeisse.grumpyjson">JsonValidationException</a>&nbsp;e)</span></div>
 <div class="block">This is an error response for failed request body validation. The error lists the fields that failed
  validation and their error messages.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>e</code> - the exceptionfrom the failed validation</dd>
+<dt>Returns:</dt>
+<dd>the instance of this class</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -356,8 +390,10 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Response.html#transmit(name.martingeisse.grumpyrest.response.ResponseTransmitter)">transmit</a></code>&nbsp;in interface&nbsp;<code><a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>responseTransmitter</code> - the response transmitter that is used to actually send data to the client</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>
@@ -406,10 +442,10 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="status()">
 <h3>status</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">status</span>()</div>
-<div class="block">Returns the value of the <code>status</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-status"><code>status</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>status</code> record component</dd>
+<dd>the value of the <a href="#param-status"><code>status</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -417,10 +453,10 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="message()">
 <h3>message</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">message</span>()</div>
-<div class="block">Returns the value of the <code>message</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-message"><code>message</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>message</code> record component</dd>
+<dd>the value of the <a href="#param-message"><code>message</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -428,10 +464,10 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="fields()">
 <h3>fields</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a>&gt;</span>&nbsp;<span class="element-name">fields</span>()</div>
-<div class="block">Returns the value of the <code>fields</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-fields"><code>fields</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>fields</code> record component</dd>
+<dd>the value of the <a href="#param-fields"><code>fields</code></a> record component</dd>
 </dl>
 </section>
 </li>

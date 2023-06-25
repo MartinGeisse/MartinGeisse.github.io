@@ -109,7 +109,9 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">StatusOnlyResponse</a><wbr>(int&nbsp;status)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -150,6 +152,11 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="&lt;init&gt;(int)">
 <h3>StatusOnlyResponse</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">StatusOnlyResponse</span><wbr><span class="parameters">(int&nbsp;status)</span></div>
+<div class="block">Constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>status</code> - the HTTP status code</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -174,6 +181,8 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Response.html#transmit(name.martingeisse.grumpyrest.response.ResponseTransmitter)">transmit</a></code>&nbsp;in interface&nbsp;<code><a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>responseTransmitter</code> - the response transmitter that is used to actually send data to the client</dd>
 </dl>
 </section>
 </li>

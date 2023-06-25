@@ -110,7 +110,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseFromString(java.lang.String,java.lang.reflect.Type)" class="member-name-link">parseFromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a string to obtain a value of the specified type.</div>
 </div>
 </div>
 </div>
@@ -132,10 +132,16 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseFromString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;text,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
                 throws <span class="exceptions"><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></span></div>
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a string to obtain a value of the specified type.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>text</code> - the text to parse</dd>
+<dd><code>type</code> - the type to convert to</dd>
+<dt>Returns:</dt>
+<dd>the converted value</dd>
 <dt>Throws:</dt>
-<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code></dd>
+<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code> - if conversion fails because the text does not conform to the expected
+ format according to the type to convert to</dd>
 </dl>
 </section>
 </li>

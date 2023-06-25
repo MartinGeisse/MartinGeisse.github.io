@@ -112,7 +112,9 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="NopResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">NopResponse</a></code></div>
 <div class="col-second even-row-color"><code><a href="#INSTANCE" class="member-name-link">INSTANCE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">A shared instance of this class that can be used to reduce memory usage.</div>
+</div>
 </div>
 </section>
 </li>
@@ -125,7 +127,9 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">NopResponse</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -166,6 +170,7 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="INSTANCE">
 <h3>INSTANCE</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="NopResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">NopResponse</a></span>&nbsp;<span class="element-name">INSTANCE</span></div>
+<div class="block">A shared instance of this class that can be used to reduce memory usage.</div>
 </section>
 </li>
 </ul>
@@ -180,6 +185,7 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <section class="detail" id="&lt;init&gt;()">
 <h3>NopResponse</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">NopResponse</span>()</div>
+<div class="block">Constructor.</div>
 </section>
 </li>
 </ul>
@@ -204,6 +210,8 @@ implements <a href="../Response.html" title="interface in name.martingeisse.grum
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Response.html#transmit(name.martingeisse.grumpyrest.response.ResponseTransmitter)">transmit</a></code>&nbsp;in interface&nbsp;<code><a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>responseTransmitter</code> - the response transmitter that is used to actually send data to the client</dd>
 </dl>
 </section>
 </li>

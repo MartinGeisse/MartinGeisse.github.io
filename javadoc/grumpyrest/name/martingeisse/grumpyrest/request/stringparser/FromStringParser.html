@@ -91,6 +91,32 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">FromStringParser</span></div>
+<div class="block">Implementations of this interface are used to parse a higher-level type from a string. This includes built-in
+ standard types such as <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link"><code>Integer</code></a>, enums, dates and custom date formats, wrapper types that give the standard
+ types a domain meaning, all the way to complex types that encode multiple fields. The common basis is that the
+ encoded form is a single string, which appears as a path parameter or querystring parameter.
+ <p>
+ There is one extension to this concept: from-string parsers can parse the same type from an <i>absent</i> string.
+ This is used to implement defaults for optional parameters. The simplest case of this is the <a href="../../../grumpyjson/builtin/helper_types/OptionalField.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types"><code>OptionalField</code></a>
+ type, which can be used like in JSON, and will be <a href="../../../grumpyjson/builtin/helper_types/OptionalField.html#isAbsent()"><code>OptionalField.isAbsent()</code></a> if a querystring argument
+ is missing. (Path arguments cannot be missing because then the path would not match anymore). The calling code
+ can then replace the missing value by a default. Other types can do the same as <a href="../../../grumpyjson/builtin/helper_types/OptionalField.html" title="class in name.martingeisse.grumpyjson.builtin.helper_types"><code>OptionalField</code></a> and implement
+ a standard behavior for missing values, which is useful if the same kind of value appears in several places, with
+ the same default behavior.
+ <p>
+ This parser interface is <i>not</i> used to parse higher-level types from JSON fields because their representation
+ is actually different. In a path parameter or a querystring parameter, the number 123 is typically represented as
+ the string "123". In JSON, on the other hand, it would be represented as a JSON number with the value 123, and we'd
+ specifically like to reject the string "123" as invalid. While this might lead to some code duplication, in practice
+ it's not that much and can be reduced by other means, e.g. both parsers delegating to a common method in the
+ background.
+ <p>
+ Conceptually, the same mechanism could be applied to HTTP headers. This is not really that useful though because
+ HTTP is pretty close to using a custom, incompatible format for each and every header. The set of
+ <a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a> used by an application, on the other hand, is intended to be consistent, and defined by
+ that application. So we currently don't use these parsers for HTTP headers. (We might reconsider this. A custom
+ format per header is not per se in contradiction with from-string parsers. We would just have to define a custom
+ type and custom parser for each header. But it's unclear if this is really useful.)</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,13 +134,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#parseFromAbsentString(java.lang.reflect.Type)" class="member-name-link">parseFromAbsentString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Parses value from an absent string.</div>
+<div class="block">Parses a value from an absent string.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseFromString(java.lang.String,java.lang.reflect.Type)" class="member-name-link">parseFromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a value from a string.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#supportsType(java.lang.reflect.Type)" class="member-name-link">supportsType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
@@ -140,6 +166,12 @@ loadScripts(document, 'script');</script>
 <h3>supportsType</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
 <div class="block">Checks if this adapter supports the specified type.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -148,10 +180,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseFromString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;s,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
                 throws <span class="exceptions"><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></span></div>
-<div class="block">Parses value from a string.</div>
+<div class="block">Parses a value from a string.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>s</code> - the string to parse</dd>
+<dd><code>type</code> - the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed value</dd>
 <dt>Throws:</dt>
-<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code></dd>
+<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code> - if the string does not conform to the parser's expectation</dd>
 </dl>
 </section>
 </li>
@@ -160,12 +197,16 @@ loadScripts(document, 'script');</script>
 <h3>parseFromAbsentString</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseFromAbsentString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
                               throws <span class="exceptions"><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></span></div>
-<div class="block">Parses value from an absent string. This can be used to return a default for optional parameters.
+<div class="block">Parses a value from an absent string. This can be used to return a default for optional parameters.
  <p>
  The standard implementation of this method is that missing values are not tolerated, and throws an exception.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed value</dd>
 <dt>Throws:</dt>
-<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code></dd>
+<dd><code><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></code> - if absent values are not tolerated (this is the default implementation)</dd>
 </dl>
 </section>
 </li>

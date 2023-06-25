@@ -109,7 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getWrappedResponseValue()" class="member-name-link">getWrappedResponseValue</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Getter method for the response value wrapped by this wrapper.</div>
+</div>
 </div>
 </div>
 </div>
@@ -128,6 +130,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getWrappedResponseValue()">
 <h3>getWrappedResponseValue</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getWrappedResponseValue</span>()</div>
+<div class="block">Getter method for the response value wrapped by this wrapper.
+ <p>
+ If the wrapped value is itself an instance of this interface, then the implementation does not have to unwrap
+ that wrapper too -- the caller of this method is expected to unwrap as often as possible.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the wrapped response value</dd>
+</dl>
 </section>
 </li>
 </ul>

@@ -95,6 +95,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">PathSegment</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">A single segment from a <a href="Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a>.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,11 +104,15 @@ loadScripts(document, 'script');</script>
 <section class="constructor-summary" id="constructor-summary">
 <h2>Constructor Summary</h2>
 <div class="caption"><span>Constructors</span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier</div>
+<div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">PathSegment</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -124,10 +129,14 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#matches(java.lang.String)" class="member-name-link">matches</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segment)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Checks whether this segment matches a segment of a path from an incoming request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.String)" class="member-name-link">parse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segmentSpec)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Parses an instance from a single segment of a string-based path specification.</div>
+</div>
 </div>
 </div>
 </div>
@@ -148,7 +157,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>PathSegment</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PathSegment</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">PathSegment</span>()</div>
+<div class="block">Constructor.</div>
 </section>
 </li>
 </ul>
@@ -163,12 +173,28 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="parse(java.lang.String)">
 <h3>parse</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PathSegment.html" title="class in name.martingeisse.grumpyrest.request.path">PathSegment</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segmentSpec)</span></div>
+<div class="block">Parses an instance from a single segment of a string-based path specification. The segment is turned
+ into a path parameter (<a href="VariablePathSegment.html" title="class in name.martingeisse.grumpyrest.request.path"><code>VariablePathSegment</code></a>) if the segment specification starts with a <code>:</code>
+ character.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>segmentSpec</code> - the segment specification</dd>
+<dt>Returns:</dt>
+<dd>the parsed segment object</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="matches(java.lang.String)">
 <h3>matches</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">matches</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;segment)</span></div>
+<div class="block">Checks whether this segment matches a segment of a path from an incoming request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>segment</code> - the request path segment</dd>
+<dt>Returns:</dt>
+<dd>true if the segment matches, false if not</dd>
+</dl>
 </section>
 </li>
 </ul>

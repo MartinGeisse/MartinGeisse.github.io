@@ -96,6 +96,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">JsonResponseFactory</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a></span></div>
+<div class="block">Converts any JSON-able value into a <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> by invoking the <a href="../../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>, then sending the result
+ with HTTP status code 200.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,7 +110,9 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">JsonResponseFactory</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -150,6 +154,7 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <section class="detail" id="&lt;init&gt;()">
 <h3>JsonResponseFactory</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">JsonResponseFactory</span>()</div>
+<div class="block">Constructor.</div>
 </section>
 </li>
 </ul>
@@ -170,6 +175,12 @@ implements <a href="../ResponseFactory.html" title="interface in name.martingeis
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../ResponseFactory.html#createResponse(name.martingeisse.grumpyrest.RequestCycle,java.lang.Object)">createResponse</a></code>&nbsp;in interface&nbsp;<code><a href="../ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>requestCycle</code> - the request cycle to create a response for. This is passed in case the response factory
+                     wants to do special stuff like look into request properties.</dd>
+<dd><code>value</code> - the response value to convert to a <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a></dd>
+<dt>Returns:</dt>
+<dd>the response</dd>
 </dl>
 </section>
 </li>

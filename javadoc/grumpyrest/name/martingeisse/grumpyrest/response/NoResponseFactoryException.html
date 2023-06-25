@@ -99,7 +99,7 @@ loadScripts(document, 'script');</script>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></code></dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">NoResponseFactoryException</span>
+<div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">NoResponseFactoryException</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link">RuntimeException</a></span></div>
 <div class="block">This exception type gets thrown if no response factory can be found for a specific response value. The most common
  case for this is that the response value is itself an unexpected exception. The response value will be hidden from
@@ -124,7 +124,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Object)" class="member-name-link">NoResponseFactoryException</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;responseValue)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -141,7 +143,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResponseValue()" class="member-name-link">getResponseValue</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Getter for the response value</div>
+</div>
 </div>
 </div>
 </div>
@@ -166,6 +170,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.lang.Object)">
 <h3>NoResponseFactoryException</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">NoResponseFactoryException</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;responseValue)</span></div>
+<div class="block">Constructor.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>responseValue</code> - the response value for which no factory could be found</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -180,6 +189,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getResponseValue()">
 <h3>getResponseValue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getResponseValue</span>()</div>
+<div class="block">Getter for the response value</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the response value</dd>
+</dl>
 </section>
 </li>
 </ul>

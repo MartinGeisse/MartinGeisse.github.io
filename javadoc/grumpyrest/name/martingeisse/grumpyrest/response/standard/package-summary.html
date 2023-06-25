@@ -93,7 +93,10 @@ loadScripts(document, 'script');</script>
 <div class="block">This simply accepts response values that implement <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> themselves.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="JsonResponseFactory.html" title="class in name.martingeisse.grumpyrest.response.standard">JsonResponseFactory</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">&nbsp;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Converts any JSON-able value into a <a href="../Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> by invoking the <a href="../../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a>, then sending the result
+ with HTTP status code 200.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="NopResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">NopResponse</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Does not respond at all.</div>
@@ -103,13 +106,15 @@ loadScripts(document, 'script');</script>
 <div class="block">Produces an empty 200 response when null is returned as a response value.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab4"><a href="StandardErrorResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab4">&nbsp;</div>
-<div class="col-first odd-row-color class-summary class-summary-tab4"><a href="StandardErrorResponse.Body.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Body</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab4">&nbsp;</div>
-<div class="col-first even-row-color class-summary class-summary-tab4"><a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab4">&nbsp;</div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StatusOnlyResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StatusOnlyResponse</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-last even-row-color class-summary class-summary-tab4">
+<div class="block">Implements a standard JSON-based error response format, combined with a selectable HTTP status code.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab4"><a href="StandardErrorResponse.Field.html" title="class in name.martingeisse.grumpyrest.response.standard">StandardErrorResponse.Field</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab4">
+<div class="block">Represents an error for a single field.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StatusOnlyResponse.html" title="class in name.martingeisse.grumpyrest.response.standard">StatusOnlyResponse</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Sends an empty response with a configurable HTTP status code.</div>
 </div>
 </div>

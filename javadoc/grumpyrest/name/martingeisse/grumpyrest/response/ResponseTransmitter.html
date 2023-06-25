@@ -87,7 +87,13 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ResponseTransmitter</span></div>
-<div class="block">This interface is used by the <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> to transmit itself to the client.</div>
+<div class="block">This interface is used by the <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> to transmit itself to the client.
+ <p>
+ The methods in this interface are grouped into "header" methods and "body" methods. This is a consequence of two
+ aspects of HTTP: In HTTP, too, all headers must come before the body, and the body is usually so large that it is
+ not desirable to keep the body, or even parts of it, in memory. The result is that these methods must be called
+ in two "blocks" of calls: First, only header methods should be called, then only body methods should be called.
+ Formally speaking, it is not allowed to call a header method after calling a body method.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,27 +111,41 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCustomHeader(java.lang.String,java.lang.String)" class="member-name-link">addCustomHeader</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Header Method: Adds a custom header to send to the client.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOutputStream()" class="member-name-link">getOutputStream</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Body method: Obtains the output stream to send body data to the client.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setContentType(java.lang.String)" class="member-name-link">setContentType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contentType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Header Method: Sets the Content-Type header to send to the client.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStatus(int)" class="member-name-link">setStatus</a><wbr>(int&nbsp;status)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Header Method: Sets the HTTP status code to send to the client.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#writeJson(java.lang.Object)" class="member-name-link">writeJson</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#writeJson(java.lang.Object,com.google.gson.reflect.TypeToken)" class="member-name-link">writeJson</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  com.google.gson.reflect.TypeToken&lt;?&gt;&nbsp;typeToken)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#writeJson(java.lang.Object,java.lang.reflect.Type)" class="member-name-link">writeJson</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.</div>
+</div>
 </div>
 </div>
 </div>
@@ -144,12 +164,27 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="setStatus(int)">
 <h3>setStatus</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setStatus</span><wbr><span class="parameters">(int&nbsp;status)</span></div>
+<div class="block">Header Method: Sets the HTTP status code to send to the client.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>status</code> - the HTTP status</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setContentType(java.lang.String)">
 <h3>setContentType</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setContentType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;contentType)</span></div>
+<div class="block">Header Method: Sets the Content-Type header to send to the client.
+ <p>
+ Note: Setting a Content-Type that includes a "charset" field (character encoding) has no effect on the
+ response body since the caller (the <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a>) has to specify the body as bytes, so all character
+ encoding happens in the caller. This behavior was defined like this because the implicit interactions --
+ regarding character encoding -- between the various setters in HttpServletRequest are a source of confusion.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>contentType</code> - the Content-Type to send to the client</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -157,6 +192,12 @@ loadScripts(document, 'script');</script>
 <h3>addCustomHeader</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addCustomHeader</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
+<div class="block">Header Method: Adds a custom header to send to the client.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - the name of the header</dd>
+<dd><code>value</code> - the value of the header</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -164,9 +205,12 @@ loadScripts(document, 'script');</script>
 <h3>getOutputStream</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/OutputStream.html" title="class or interface in java.io" class="external-link">OutputStream</a></span>&nbsp;<span class="element-name">getOutputStream</span>()
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Body method: Obtains the output stream to send body data to the client.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>the body output stream</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>
@@ -176,10 +220,16 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">writeJson</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</span>
         throws <span class="exceptions"><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a>,
 <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.
+ <p>
+ This method does not set the Content-Type to JSON to keep the separation into header methods and body methods
+ clean.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the value to convert to JSON</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code> - if the value is in an inconsistent state or in a state that cannot be converted to JSON</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>
@@ -190,10 +240,17 @@ loadScripts(document, 'script');</script>
  com.google.gson.reflect.TypeToken&lt;?&gt;&nbsp;typeToken)</span>
         throws <span class="exceptions"><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a>,
 <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.
+ <p>
+ This method does not set the Content-Type to JSON to keep the separation into header methods and body methods
+ clean.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the value to convert to JSON</dd>
+<dd><code>typeToken</code> - a type token for the type used for conversion</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code> - if the value is in an inconsistent state or in a state that cannot be converted to JSON</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>
@@ -204,10 +261,17 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
         throws <span class="exceptions"><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a>,
 <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Body method: Converts the specified value to JSON and sends it to the client using the body output stream.
+ <p>
+ This method does not set the Content-Type to JSON to keep the separation into header methods and body methods
+ clean.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - the value to convert to JSON</dd>
+<dd><code>type</code> - the type used for conversion</dd>
 <dt>Throws:</dt>
-<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="../../grumpyjson/JsonGenerationException.html" title="class in name.martingeisse.grumpyjson">JsonGenerationException</a></code> - if the value is in an inconsistent state or in a state that cannot be converted to JSON</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - on I/O errors</dd>
 </dl>
 </section>
 </li>

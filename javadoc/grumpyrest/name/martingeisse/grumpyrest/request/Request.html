@@ -87,6 +87,17 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Request</span></div>
+<div class="block">This interface provides access to all properties of an HTTP request that are relevant for the REST API. It serves
+ two purposes:
+ <ul>
+     <li>it allows <a href="../SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> to depend only on <a href="Request.html" title="interface in name.martingeisse.grumpyrest.request"><code>Request</code></a>, decoupling it from <a href="../RequestCycle.html" title="class in name.martingeisse.grumpyrest"><code>RequestCycle</code></a>,
+       and therefore simplifies testing and mocking</li>
+     <li>it removes the need for getter methods for request properties in <a href="../RequestCycle.html" title="class in name.martingeisse.grumpyrest"><code>RequestCycle</code></a> and so helps to
+       keep it more tidy</li>
+ </ul>
+ <p>
+ This interface currently provides acces to path arguments, querystring arguments and the request body. In the
+ future, it will be extended to access request headers.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,25 +114,42 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPathArguments()" class="member-name-link">getPathArguments</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Getter method for the path arguments bound to path parameters in the matched route.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseBody(com.google.gson.reflect.TypeToken)" class="member-name-link">parseBody</a><wbr>(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseBody(java.lang.Class)" class="member-name-link">parseBody</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseBody(java.lang.reflect.Type)" class="member-name-link">parseBody</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseQuerystring(com.google.gson.reflect.TypeToken)" class="member-name-link">parseQuerystring</a><wbr>(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the whole querystring into an object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseQuerystring(java.lang.Class)" class="member-name-link">parseQuerystring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the whole querystring into an object.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parseQuerystring(java.lang.reflect.Type)" class="member-name-link">parseQuerystring</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Parses the whole querystring into an object.</div>
+</div>
 </div>
 </div>
 </div>
@@ -140,6 +168,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getPathArguments()">
 <h3>getPathArguments</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="PathArgument.html" title="class in name.martingeisse.grumpyrest.request">PathArgument</a>&gt;</span>&nbsp;<span class="element-name">getPathArguments</span>()</div>
+<div class="block">Getter method for the path arguments bound to path parameters in the matched route.
+ <p>
+ The returned list contains one element per path parameter. That is, literal path segments do not appear in
+ the returned list.
+ <p>
+ The path arguments keep the value of the corresponding segments of the request path in their textual form. No
+ parsing or mapping to application types has been performed at this point. Instead, parsing as an application
+ type is done by calling methods on the returned <a href="PathArgument.html" title="class in name.martingeisse.grumpyrest.request"><code>PathArgument</code></a> objects.
+ <p>
+ This method may only be called after a route has been matched and the match result applied to the request --
+ binding path arguments -- but once a handler gets called, this is the case.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>the path arguments</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -147,9 +190,20 @@ loadScripts(document, 'script');</script>
 <h3>parseQuerystring</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span>
                 throws <span class="exceptions"><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
+<div class="block">Parses the whole querystring into an object. This object is usually a Java record with a one-to-one mapping
+ of querystring parameters to record fields, but custom parsing can be defined through the
+ <a href="querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParserRegistry</code></a>. Parsers for yet unknown record types will be auto-generated, and parsers
+ for the individual fields will be taken from the <a href="stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParserRegistry</code></a>.</div>
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the static type of the class to parse as</dd>
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - the class to parse as, usually a record class</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
 <dt>Throws:</dt>
-<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
+<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code> - on parsing errors, such as wrongly formatted fields, unknown fields,
+ missing fields or duplicate fields</dd>
 </dl>
 </section>
 </li>
@@ -158,9 +212,20 @@ loadScripts(document, 'script');</script>
 <h3>parseQuerystring</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</span>
                 throws <span class="exceptions"><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
+<div class="block">Parses the whole querystring into an object. This object is usually a Java record with a one-to-one mapping
+ of querystring parameters to record fields, but custom parsing can be defined through the
+ <a href="querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParserRegistry</code></a>. Parsers for yet unknown record types will be auto-generated, and parsers
+ for the individual fields will be taken from the <a href="stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParserRegistry</code></a>.</div>
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the static type to parse as</dd>
+<dt>Parameters:</dt>
+<dd><code>typeToken</code> - a type token for the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
 <dt>Throws:</dt>
-<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
+<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code> - on parsing errors, such as wrongly formatted fields, unknown fields,
+ missing fields or duplicate fields</dd>
 </dl>
 </section>
 </li>
@@ -169,9 +234,18 @@ loadScripts(document, 'script');</script>
 <h3>parseQuerystring</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseQuerystring</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span>
                  throws <span class="exceptions"><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></span></div>
+<div class="block">Parses the whole querystring into an object. This object is usually a Java record with a one-to-one mapping
+ of querystring parameters to record fields, but custom parsing can be defined through the
+ <a href="querystring/QuerystringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParserRegistry</code></a>. Parsers for yet unknown record types will be auto-generated, and parsers
+ for the individual fields will be taken from the <a href="stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParserRegistry</code></a>.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
 <dt>Throws:</dt>
-<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code></dd>
+<dd><code><a href="querystring/QuerystringParsingException.html" title="class in name.martingeisse.grumpyrest.request.querystring">QuerystringParsingException</a></code> - on parsing errors, such as wrongly formatted fields, unknown fields,
+ missing fields or duplicate fields</dd>
 </dl>
 </section>
 </li>
@@ -179,18 +253,46 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="parseBody(java.lang.Class)">
 <h3>parseBody</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;clazz)</span></div>
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>. Refer to these classes for details.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the static type of the class to parse as</dd>
+<dt>Parameters:</dt>
+<dd><code>clazz</code> - the class to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="parseBody(com.google.gson.reflect.TypeToken)">
 <h3>parseBody</h3>
 <div class="member-signature"><span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(com.google.gson.reflect.TypeToken&lt;T&gt;&nbsp;typeToken)</span></div>
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>. Refer to these classes for details.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - the static type to parse as</dd>
+<dt>Parameters:</dt>
+<dd><code>typeToken</code> - a type token for the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="parseBody(java.lang.reflect.Type)">
 <h3>parseBody</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">parseBody</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Parses the request body using the JSON parsing mechanism defined by <a href="../../grumpyjson/JsonEngine.html" title="class in name.martingeisse.grumpyjson"><code>JsonEngine</code></a> and the JSON-able types
+ defined in the engine's <a href="../../grumpyjson/JsonRegistry.html" title="class in name.martingeisse.grumpyjson"><code>JsonRegistry</code></a>. Refer to these classes for details.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to parse as</dd>
+<dt>Returns:</dt>
+<dd>the parsed object</dd>
+</dl>
 </section>
 </li>
 </ul>

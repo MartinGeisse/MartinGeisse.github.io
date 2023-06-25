@@ -105,7 +105,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ResponseFactoryRegistry</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -122,14 +124,20 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(name.martingeisse.grumpyrest.response.ResponseFactory)" class="member-name-link">add</a><wbr>(<a href="ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a>&nbsp;factory)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a response factory to this registry, to be used when converting a response value to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes all response factories from this registry.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createResponse(name.martingeisse.grumpyrest.RequestCycle,java.lang.Object)" class="member-name-link">createResponse</a><wbr>(<a href="../RequestCycle.html" title="class in name.martingeisse.grumpyrest">RequestCycle</a>&nbsp;requestCycle,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a response value to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> using an appropriate response factory from this registry.</div>
+</div>
 </div>
 </div>
 </div>
@@ -151,6 +159,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;()">
 <h3>ResponseFactoryRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ResponseFactoryRegistry</span>()</div>
+<div class="block">Constructor. This constructor does not add any factories, but the <a href="../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> calling this constructor does.</div>
 </section>
 </li>
 </ul>
@@ -165,12 +174,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="clear()">
 <h3>clear</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
+<div class="block">Removes all response factories from this registry. This is useful because the registry that is used by a newly
+ created <a href="../RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> contains default response factories, and the code using it might not want to use them.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="add(name.martingeisse.grumpyrest.response.ResponseFactory)">
 <h3>add</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="ResponseFactory.html" title="interface in name.martingeisse.grumpyrest.response">ResponseFactory</a>&nbsp;factory)</span></div>
+<div class="block">Adds a response factory to this registry, to be used when converting a response value to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>factory</code> - the response factory to add</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -178,6 +194,16 @@ loadScripts(document, 'script');</script>
 <h3>createResponse</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Response.html" title="interface in name.martingeisse.grumpyrest.response">Response</a></span>&nbsp;<span class="element-name">createResponse</span><wbr><span class="parameters">(<a href="../RequestCycle.html" title="class in name.martingeisse.grumpyrest">RequestCycle</a>&nbsp;requestCycle,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</span></div>
+<div class="block">Converts a response value to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a> using an appropriate response factory from this registry.
+ If multiple response factories support conversion of that value, then the one added earlier takes precedence.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>requestCycle</code> - the request cycle to create a response for. This is passed in case the response factory
+                     wants to do special stuff like look into request properties.</dd>
+<dd><code>value</code> - the response value to convert to a <a href="Response.html" title="interface in name.martingeisse.grumpyrest.response"><code>Response</code></a></dd>
+<dt>Returns:</dt>
+<dd>the response</dd>
+</dl>
 </section>
 </li>
 </ul>

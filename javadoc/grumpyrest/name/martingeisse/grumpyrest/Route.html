@@ -90,9 +90,35 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>Record Components:</dt>
+<dd><code><span id="param-method">method</span></code> - the HTTP method to match</dd>
+<dd><code><span id="param-path">path</span></code> - the path pattern to match. May include path parameters.</dd>
+<dd><code><span id="param-handler">handler</span></code> - the handler to invoke for requests that match this route</dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public record </span><span class="element-name type-name-label">Route</span>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method, <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path, <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Record.html" title="class or interface in java.lang" class="external-link">Record</a></span></div>
+<div class="block">A route is, conceptually, a set of criteria that determine whether the route matches a specific requests, as well
+ as a handler that defines what to do for requests that match. The <a href="RestApi.html" title="class in name.martingeisse.grumpyrest"><code>RestApi</code></a> handles a request by picking the
+ first route that matches, then handing the request to that route. Routes are the main mechanism to distinguish
+ requests by HTTP method and path.
+ <p>
+ In a more practical sense,
+ <ul>
+     <li>routes always distinguish by HTTP method. That is, you cannot (currently) define a route that matches
+     multiple or all HTTP methods. You'll have to add multiple routes for that.</li>
+     <li>each route uses a path (actually, a path pattern) and only handles requests that match this path. The
+     path can contain literal path segments (strings that must match the request exactly) as well as path
+     variables (a.k.a. path parameters) that will match any path segment from the request, and also capture the
+     provided path segment for use in the handler. This is used mainly for paths that contain entity IDs.</li>
+     <li>the handler is simply a callback that gets called if the route matches. There are two possible interfaces
+     to implement as a handler, <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> and <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest"><code>ComplexHandler</code></a>. You should implement
+     <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> if possible, and <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest"><code>ComplexHandler</code></a> if necessary, because it reduces coupling and
+     simplifies testing and mocking. Refer to these interfaces for details</li>
+ </ul>
+ <p>
+ The canonical constructor takes a <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest"><code>ComplexHandler</code></a> because this is the more general case.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,11 +133,16 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.request.HttpMethod,java.lang.String,name.martingeisse.grumpyrest.ComplexHandler)" class="member-name-link">Route</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">This constructor specifies the path pattern as a string instead of a <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a> object.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.request.HttpMethod,java.lang.String,name.martingeisse.grumpyrest.SimpleHandler)" class="member-name-link">Route</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor for a <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> which also specifies the path pattern as a string instead of a
+ <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a> object.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.request.HttpMethod,name.martingeisse.grumpyrest.request.path.Path,name.martingeisse.grumpyrest.ComplexHandler)" class="member-name-link">Route</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</code></div>
@@ -121,7 +152,9 @@ loadScripts(document, 'script');</script>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.request.HttpMethod,name.martingeisse.grumpyrest.request.path.Path,name.martingeisse.grumpyrest.SimpleHandler)" class="member-name-link">Route</a><wbr>(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Constructor for a <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -144,7 +177,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handler()" class="member-name-link">handler</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>handler</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-handler"><code>handler</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -164,12 +197,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#method()" class="member-name-link">method</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>method</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-method"><code>method</code></a> record component.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#path()" class="member-name-link">path</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the <code>path</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-path"><code>path</code></a> record component.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -199,6 +232,14 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Route</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a>&nbsp;handler)</span></div>
+<div class="block">This constructor specifies the path pattern as a string instead of a <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a> object. Leading and trailing
+ slashes are ignored. A path parameter is specified as a path segment that starts with a ':' character.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path pattern to match. May include path parameters.</dd>
+<dd><code>handler</code> - the handler to invoke for requests that match this route</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -207,6 +248,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Route</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</span></div>
+<div class="block">Constructor for a <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path pattern to match. May include path parameters.</dd>
+<dd><code>handler</code> - the handler to invoke for requests that match this route</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -215,6 +263,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Route</span><wbr><span class="parameters">(<a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a>&nbsp;method,
  <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
  <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest">SimpleHandler</a>&nbsp;handler)</span></div>
+<div class="block">Constructor for a <a href="SimpleHandler.html" title="interface in name.martingeisse.grumpyrest"><code>SimpleHandler</code></a> which also specifies the path pattern as a string instead of a
+ <a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path"><code>Path</code></a> object. Leading and trailing slashes are ignored. A path parameter is specified as a path segment
+ that starts with a ':' character.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>method</code> - the HTTP method to match</dd>
+<dd><code>path</code> - the path pattern to match. May include path parameters.</dd>
+<dd><code>handler</code> - the handler to invoke for requests that match this route</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -226,9 +283,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Creates an instance of a <code>Route</code> record class.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>method</code> - the value for the <code>method</code> record component</dd>
-<dd><code>path</code> - the value for the <code>path</code> record component</dd>
-<dd><code>handler</code> - the value for the <code>handler</code> record component</dd>
+<dd><code>method</code> - the value for the <a href="#param-method"><code>method</code></a> record component</dd>
+<dd><code>path</code> - the value for the <a href="#param-path"><code>path</code></a> record component</dd>
+<dd><code>handler</code> - the value for the <a href="#param-handler"><code>handler</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -316,10 +373,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="method()">
 <h3>method</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="request/HttpMethod.html" title="enum class in name.martingeisse.grumpyrest.request">HttpMethod</a></span>&nbsp;<span class="element-name">method</span>()</div>
-<div class="block">Returns the value of the <code>method</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-method"><code>method</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>method</code> record component</dd>
+<dd>the value of the <a href="#param-method"><code>method</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -327,10 +384,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="path()">
 <h3>path</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="request/path/Path.html" title="class in name.martingeisse.grumpyrest.request.path">Path</a></span>&nbsp;<span class="element-name">path</span>()</div>
-<div class="block">Returns the value of the <code>path</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-path"><code>path</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>path</code> record component</dd>
+<dd>the value of the <a href="#param-path"><code>path</code></a> record component</dd>
 </dl>
 </section>
 </li>
@@ -338,10 +395,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="handler()">
 <h3>handler</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ComplexHandler.html" title="interface in name.martingeisse.grumpyrest">ComplexHandler</a></span>&nbsp;<span class="element-name">handler</span>()</div>
-<div class="block">Returns the value of the <code>handler</code> record component.</div>
+<div class="block">Returns the value of the <a href="#param-handler"><code>handler</code></a> record component.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the value of the <code>handler</code> record component</dd>
+<dd>the value of the <a href="#param-handler"><code>handler</code></a> record component</dd>
 </dl>
 </section>
 </li>

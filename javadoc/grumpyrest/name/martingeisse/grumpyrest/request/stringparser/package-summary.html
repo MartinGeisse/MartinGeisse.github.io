@@ -95,11 +95,18 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">FromStringParser</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">&nbsp;</div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Implementations of this interface are used to parse a higher-level type from a string.</div>
+</div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="FromStringParserException.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserException</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab5">&nbsp;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab5">
+<div class="block">This exception gets thrown by a <a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a> if the string to parse does not conform to the parser's
+ expectation.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">&nbsp;</div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">This registry keeps <a href="FromStringParser.html" title="interface in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParser</code></a>s used to parse path parameters and querystring parameters.</div>
+</div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ParseFromStringService.html" title="interface in name.martingeisse.grumpyrest.request.stringparser">ParseFromStringService</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">This interface exposes only the <a href="FromStringParserRegistry.html#parseFromString(java.lang.String,java.lang.reflect.Type)"><code>FromStringParserRegistry.parseFromString(String, Type)</code></a> method.</div>

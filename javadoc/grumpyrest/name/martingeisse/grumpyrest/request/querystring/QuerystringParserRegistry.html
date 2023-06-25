@@ -91,6 +91,12 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">QuerystringParserRegistry</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">A registry for <a href="QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring"><code>QuerystringParser</code></a> objects. Usually all parsers in this registry are auto-generated, so the
+ registry only serves as a cache to avoid duplicate work.
+ <p>
+ This registry keep a reference to the <a href="../stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParserRegistry</code></a> to parse individual fields. Once starting to
+ request whole-querystring from this registry, the <a href="../stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser"><code>FromStringParserRegistry</code></a> should not be modified anymore
+ because its parsers will be partially baked-into the generated whole-querystring parsers.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -103,7 +109,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(name.martingeisse.grumpyrest.request.stringparser.FromStringParserRegistry)" class="member-name-link">QuerystringParserRegistry</a><wbr>(<a href="../stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a>&nbsp;fromStringParserRegistry)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Constructor.</div>
+</div>
 </div>
 </section>
 </li>
@@ -120,19 +128,31 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addParser(name.martingeisse.grumpyrest.request.querystring.QuerystringParser)" class="member-name-link">addParser</a><wbr>(<a href="QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a>&nbsp;parser)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adds a parser to this registry.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearParsers()" class="member-name-link">clearParsers</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Removes all parsers from this registry.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParser(java.lang.reflect.Type)" class="member-name-link">getParser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns a parser for the specified type.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsParserAutoGeneration(java.lang.reflect.Type)" class="member-name-link">supportsParserAutoGeneration</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether the specified type is supported through auto-generated by this registry, including
+ already-auto-generated parsers and parsers that could be auto-generated in the future.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#supportsType(java.lang.reflect.Type)" class="member-name-link">supportsType</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Checks whether the specified type is supported by any parser in this registry, including manually added parsers,
+ already-auto-generated parsers and parsers that could be auto-generated in the future.</div>
+</div>
 </div>
 </div>
 </div>
@@ -154,6 +174,15 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(name.martingeisse.grumpyrest.request.stringparser.FromStringParserRegistry)">
 <h3>QuerystringParserRegistry</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">QuerystringParserRegistry</span><wbr><span class="parameters">(<a href="../stringparser/FromStringParserRegistry.html" title="class in name.martingeisse.grumpyrest.request.stringparser">FromStringParserRegistry</a>&nbsp;fromStringParserRegistry)</span></div>
+<div class="block">Constructor. The new instance initially contains no parsers.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>fromStringParserRegistry</code> - the from-string parser registry that is used to refer to parsers for the
+                                 individual fields. This is only used by this class when auto-generating
+                                 parsers because manually added parsers also contain their own logic to handle
+                                 "fields" (if they have a concept of fields at all), though they might choose to
+                                 use the same from-string parser registry for that.</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -168,30 +197,63 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="clearParsers()">
 <h3>clearParsers</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearParsers</span>()</div>
+<div class="block">Removes all parsers from this registry.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="addParser(name.martingeisse.grumpyrest.request.querystring.QuerystringParser)">
 <h3>addParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addParser</span><wbr><span class="parameters">(<a href="QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a>&nbsp;parser)</span></div>
+<div class="block">Adds a parser to this registry.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parser</code> - the parser to add</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsType(java.lang.reflect.Type)">
 <h3>supportsType</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsType</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Checks whether the specified type is supported by any parser in this registry, including manually added parsers,
+ already-auto-generated parsers and parsers that could be auto-generated in the future.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="supportsParserAutoGeneration(java.lang.reflect.Type)">
 <h3>supportsParserAutoGeneration</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">supportsParserAutoGeneration</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Checks whether the specified type is supported through auto-generated by this registry, including
+ already-auto-generated parsers and parsers that could be auto-generated in the future. Note that this method
+ even returns true for a type for which a parser could be auto-generated but a parser has already been added
+ manually, so the auto-generation never actually occurs.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to check</dd>
+<dt>Returns:</dt>
+<dd>true if supported, false if not</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getParser(java.lang.reflect.Type)">
 <h3>getParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="QuerystringParser.html" title="interface in name.martingeisse.grumpyrest.request.querystring">QuerystringParser</a></span>&nbsp;<span class="element-name">getParser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/20/docs/api/java.base/java/lang/reflect/Type.html" title="class or interface in java.lang.reflect" class="external-link">Type</a>&nbsp;type)</span></div>
+<div class="block">Returns a parser for the specified type. This method throws an exception if no parser has been added for that
+ type and auto-generation is not supported for it. If multiple parsers have been registered that can handle the
+ specified type, the one registered earlier will take precedence.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>type</code> - the type to return a parser for</dd>
+<dt>Returns:</dt>
+<dd>the parser</dd>
+</dl>
 </section>
 </li>
 </ul>
